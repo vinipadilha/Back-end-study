@@ -12,5 +12,4 @@ app.get('/alunos', (req, res) => {
 app.listen(3000, () => {
     console.log('iniciei meu servidor')
 })
-console.log"
 

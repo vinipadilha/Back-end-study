@@ -13,4 +13,4 @@ app.listen(3000, () => {
     console.log('iniciei meu servidor')
 })
 
-alert("FEITO")
+console.log("concluido")

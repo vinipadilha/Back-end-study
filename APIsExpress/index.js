@@ -13,4 +13,3 @@ app.listen(3000, () => {
     console.log('iniciei meu servidor')
 })
 
-alert("alert")

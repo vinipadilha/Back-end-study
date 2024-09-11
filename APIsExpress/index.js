@@ -10,10 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 
-app.listen(21262, () => {
-    console.log(' Express strated at http://localhost:21262')
-})
-
 
 let db =  [
     { '1': { Nome: 'Cliente 1 ', Idade: '20' } },
@@ -21,7 +17,29 @@ let db =  [
     { '3': { Nome: 'Cliente 3 ', Idade: '20' } }
 ]
 
-
+// Buscar dados
 app.get('/', (req, res) => {
-    
+    return res.json(db)
 })
+
+
+// Inserir dados
+app.post('/add', (req, res) => {
+    const body = req.body
+
+    if(!body)
+        return res.status(400).end()
+
+    db.push(body)
+    return res.json(body)      
+
+})
+
+
+
+app.listen(21262, () => {
+    console.log(' Express strated at http://localhost:21262')
+})
+
+
+

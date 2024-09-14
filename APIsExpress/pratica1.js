@@ -1,0 +1,48 @@
+// PRATICA 1 DO DEV 
+
+const express = require('express')
+const app = express()
+
+// COMUNICA QUE VAI USAR JSON 
+app.use(express.json()) 
+
+
+// FALA QUE PORTA DO PC VAI ESTAR OLHANDO, NO CASO 3000
+app.listen(3000, () => {
+    console.log("servidor iniciado")
+})
+
+
+// FAZ A BUSCA DE TODOS OS USURARIOS
+app.get('/usuarios', (req, res) => {
+    console.log(req.query)
+    res.status(200).send("todos os usuarios") 
+})
+
+// GET BY ID
+app.get('/usuarios/:id', (req, res) => {
+    res.status(200).send(req.params.id)
+})
+
+// POST 
+app.post('/usuarios', (req, res) => {
+    console.log(req.body)
+    console.log("entrou no alunos")
+    res.status(200).send(req.body)
+})
+
+// PUT
+app.put('/usuarios/:id', (req, res) => {
+    res.status(200).send(req.params.id)
+})
+
+// DELETE
+app.delete('/usuarios/:id', (req, res) => {
+    res.status(200).send(req.params.id)
+})
+
+app.post()
+
+
+
+

@@ -13,6 +13,10 @@ app.listen(3000, () => {
 })
 
 
+const users = []
+
+
+
 // FAZ A BUSCA DE TODOS OS USURARIOS
 app.get('/usuarios', (req, res) => {
     console.log(req.query)

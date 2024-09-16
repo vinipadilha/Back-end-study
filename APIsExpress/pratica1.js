@@ -37,9 +37,16 @@ app.post('/usuarios', (req, res) => {
 
 // PUT
 app.put('/usuarios/:id', (req, res) => {
-    const usuario = users.find(x => x.id == req.params.id)
+    const usuario = users.find(x => x.id == req.params.id)    
+    // na linha acima o req.params.id vai buscar a id que o cliente digitou na URL 
+    // e o metodo find vai percorrer o array ate achar a mesma id que foi colocada na URL 
+    
+    
     const alunoId = users.indexOf(usuario)
     users[alunoId] = req.body
+    // usuarios[alunoId]: Localiza o usuário no array pelo seu índice.
+    // req.body: Contém os novos dados para substituir o usuário existente.
+    
     
     res.status(200).send("O aluno foi atualizado com sucesso!")
 })

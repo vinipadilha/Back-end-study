@@ -37,15 +37,18 @@ app.post('/usuarios', (req, res) => {
 
 // PUT
 app.put('/usuarios/:id', (req, res) => {
-    const usuario = usuarios.find(x => x.id == req.params.id)
-    const alunoId = usuarios.indexOf(usuario)
-    usuarios[alunoId] = req.body
+    const usuario = users.find(x => x.id == req.params.id)
+    const alunoId = users.indexOf(usuario)
+    users[alunoId] = req.body
     
     res.status(200).send("O aluno foi atualizado com sucesso!")
 })
 
 // DELETE
 app.delete('/usuarios/:id', (req, res) => {
+    const usuario = users.find(x => x.id == req.params.id)
+    const alunoId = users.indexOf(usuario)
+    users.splice(alunoId, 1)
     res.status(200).send(req.params.id)
 })
 

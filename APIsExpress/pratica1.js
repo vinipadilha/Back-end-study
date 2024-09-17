@@ -25,8 +25,7 @@ app.get('/usuarios', (req, res) => {
 // GET BY ID
 app.get('/usuarios/:id', (req, res) => {
     const alunoId = req.params.id
-    res.status(200).send(users.find(x => x.id == alunoId))
-
+    res.status(200).send(users.find(x => x.id == alunoId))  
 })
 
 // POST 

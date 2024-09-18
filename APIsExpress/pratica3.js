@@ -17,7 +17,7 @@ app.get('/carros', (req, res) => {
 
 app.get('/carros/:id', (req, res) => {
     const carro = carros.find(x => x.id == req.params.id)
-    res.status(200).send(findCar)
+    res.status(200).send(carro)
 })
 
 
@@ -41,7 +41,7 @@ app.delete('/carros/:id', (req, res) => {
     const carro = carros.find(x => x.id == req.params.id)
     const carroId = carros.indexOf(carro)
     carros.splice(carroId, 1)
-    res.status(200).send(req.params.id)
+    res.status(200).send(req.params)
 })
 
 

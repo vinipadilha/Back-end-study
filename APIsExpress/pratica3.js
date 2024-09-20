@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 
+
 app.use(express.json())
 
 app.listen(2000, () => {
@@ -23,6 +24,7 @@ app.get('/carros/:id', (req, res) => {
 
 
 app.post('/carros', (req, res) => {
+    console.log(req.body)
     carros.push(req.body)
     res.status(200).send("Carro cadastrado com sucesso!")
 })
@@ -43,6 +45,7 @@ app.delete('/carros/:id', (req, res) => {
     carros.splice(carroId, 1)
     res.status(200).send(req.params)
 })
+
 
 
 

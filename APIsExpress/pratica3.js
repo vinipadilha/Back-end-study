@@ -46,6 +46,8 @@ app.delete('/carros/:id', (req, res) => {
     res.status(200).send(req.params)
 })
 
+console.log("Estudando banco de dados AWS")
+
 
 
 
